@@ -59,6 +59,7 @@ export default function Home() {
         .section.visible{opacity:1;transform:translateY(0)}
 
         ::selection{background:#00FF44;color:#0a0a0a}
+        .nav-link:hover{color:#fff !important}
         input::placeholder{color:rgba(255,255,255,.3)}
         input:focus{outline:none;border-color:#00FF44 !important;box-shadow:0 0 0 3px rgba(0,255,68,.2) !important}
       `}</style>
@@ -95,14 +96,14 @@ export default function Home() {
             </span>
           </div>
           <div style={{ display:"flex",alignItems:"center",gap:20 }}>
-            <a href="#how" style={{ fontSize:13,color:"rgba(255,255,255,.5)",textDecoration:"none",fontWeight:600,transition:"color .2s" }} onMouseEnter={e=>e.target.style.color="#fff"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.5)"}>How it works</a>
-            <a href="#waitlist" style={{ fontSize:13,color:"rgba(255,255,255,.5)",textDecoration:"none",fontWeight:600,transition:"color .2s" }} onMouseEnter={e=>e.target.style.color="#fff"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.5)"}>Waitlist</a>
-            <a href="#waitlist" className="hovp" style={{
+            <button onClick={()=>document.getElementById("how")?.scrollIntoView({behavior:"smooth"})} className="nav-link" style={{ fontSize:13,color:"rgba(255,255,255,.5)",textDecoration:"none",fontWeight:600,transition:"color .2s",background:"none",border:"none",cursor:"pointer",fontFamily:"inherit" }}>How it works</button>
+            <button onClick={()=>document.getElementById("waitlist")?.scrollIntoView({behavior:"smooth"})} className="nav-link" style={{ fontSize:13,color:"rgba(255,255,255,.5)",textDecoration:"none",fontWeight:600,transition:"color .2s",background:"none",border:"none",cursor:"pointer",fontFamily:"inherit" }}>Waitlist</button>
+            <button onClick={()=>document.getElementById("waitlist")?.scrollIntoView({behavior:"smooth"})} className="hovp" style={{
               padding:"8px 18px",background:"#00FF44",color:"#0a0a0a",
               fontSize:12,fontWeight:700,fontFamily:"'Space Mono',monospace",
               letterSpacing:".08em",border:"2px solid #0a0a0a",
               textDecoration:"none",
-            }}>JOIN ★</a>
+            }}>JOIN ★</button>
           </div>
         </header>
 
@@ -272,7 +273,7 @@ export default function Home() {
                 {[
                   { n:"01",title:"DISCOVER",desc:"Browse Spotify-verified artists by genre. See their rates, monthly listeners, and what they sound like — all before you commit.",icon:"⚡",color:"#00FF44" },
                   { n:"02",title:"GET BOOKED",desc:"Connect your Spotify to verify. Set your verse, hook, and full feature rates. Your stats get pulled automatically — no cap needed.",icon:"💀",color:"#E020CC" },
-                  { n:"03",title:"LOCK IT IN",desc:"Pick an artist, choose your tier, send the request. Once they accept, it's locked in. Real artists, real rates, no middlemen.",icon:"🔥",color:"#DDCC00" },
+                  { n:"03",title:"LOCK IT IN",desc:"Pick an artist, choose your tier, send the request. Once they accept, it&apos;s locked in. Real artists, real rates, no middlemen.",icon:"🔥",color:"#DDCC00" },
                 ].map((c,i) => (
                   <div key={i} style={{ display:"flex",gap:20,alignItems:"flex-start" }}>
                     {/* Number + line */}
